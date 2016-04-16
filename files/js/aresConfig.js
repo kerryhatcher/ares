@@ -9,5 +9,6 @@ window.config = {
     principal:      'arn:aws:iam::150179862823:saml-provider/auth0-provider', // AWS saml provider arn
     domain:         'kerryhatcher.auth0.com',                // Auth0 domain
     clientID:       'L77XIIPdRp2Ut7mjG0enQGSgZmyc4bYg', // Auth0 app client id
-    targetClientId: 'L77XIIPdRp2Ut7mjG0enQGSgZmyc4bYg' // Auth0 AWS API client id
+    targetClientId: 'L77XIIPdRp2Ut7mjG0enQGSgZmyc4bYg', // Auth0 AWS API client id
+    awsurl: 'https://4dimqclsxg.execute-api.us-east-1.amazonaws.com/prod/nws/cap'
 };

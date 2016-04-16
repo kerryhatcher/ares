@@ -43,3 +43,31 @@ code {
 /* Contact Form
 ======================================================= */
 #success_message{ display: none;}
+
+
+.table>tbody>tr.NWSSevere>td,
+ .table>tbody>tr.NWSSevere>th{
+     background-color: #f2dede;
+ }
+
+.table>tbody>tr.NWSModerate>td,
+.table>tbody>tr.NWSModerate>th{
+    background-color: #fcf8e3;
+}
+
+.table>tbody>tr.NWSMinor>td,
+.table>tbody>tr.NWSMinor>th{
+    background-color: #d9edf7;
+}
+
+table.alert-table {
+    margin-right: 0;
+    margin-left: 0;
+    background-color: #fff;
+    border-color: #ddd;
+    border-width: 1px;
+    border-radius: 4px 4px 0 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-style: solid;
+}

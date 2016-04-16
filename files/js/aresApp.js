@@ -5,7 +5,7 @@
 
 
 
-var app = angular.module('aresApp', ['ngRoute', 'auth0', 'angular-storage', 'angular-jwt'])
+var app = angular.module('aresApp', ['ngRoute', 'auth0', 'angular-storage', 'angular-jwt', 'angular-dayparts'])
 
     .config( function aresAppConfig ( $routeProvider, authProvider, $httpProvider, $locationProvider, jwtInterceptorProvider) {
         $routeProvider
@@ -25,11 +25,12 @@ var app = angular.module('aresApp', ['ngRoute', 'auth0', 'angular-storage', 'ang
                 controllerAs: 'admin'
             })
             .when('/profile', {
-                templateUrl: 'files/partials/profile.html',
+                templateUrl: 'files/partials/profile.html'
             })
-            .when('/acorns/:acornId/edit', {
-                templateUrl: 'partials/edit.html',
-                controller: 'EditController'
+            .when('/status', {
+                templateUrl: 'files/partials/eocstatus.html',
+                controller: 'statusPageCtrl',
+                controllerAs: 'status'
             })
             .otherwise({
                 redirectTo: '/'

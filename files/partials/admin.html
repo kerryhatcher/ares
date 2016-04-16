@@ -4,7 +4,6 @@
 
 <ul>
     <li ng-repeat="option in admin.eocstatusoptions">
-        <a href="#/status"  class="btn {{option.code}}">EOC Status: {{option.message}}</a>
-        <p>{{option.description}}</p>
+        <p><a href="#/status"  class="btn {{option.code}}">EOC Status: {{option.message}}</a> {{option.description}}</p>
     </li>
 </ul>

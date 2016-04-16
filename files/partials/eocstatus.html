@@ -1,0 +1,42 @@
+<h1>EOC Status</h1>
+
+<p><a  class="btn {{status.eocstatus.code}}">EOC Status: {{status.eocstatus.message}}</a> {{status.eocstatus.description}} </p>
+
+
+<h2>Current Watches and Warnings for Bibb County</h2>
+
+<table class="table alert-table">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Severity</th>
+            <th>Status</th>
+            <th>Type</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="NWS{{ entry.severity.__text}}" ng-repeat="entry in  status.nwsxml | orderBy:sortType:sortReverse">
+
+            <th scope="row">
+                <a ng-click="sortType = 'Event'">
+                    {{entry.event.__text}}
+                </a>
+
+            </th>
+            <td>{{ entry.severity.__text}}</td>
+            <td>{{ entry.status.__text}}</td>
+            <td>{{ entry.msgType.__text}}</td>
+            <td>{{entry.title}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<h2>EOC Status and Meaning</h2>
+
+<ul>
+    <li ng-repeat="option in status.eocstatusoptions">
+        <p><a href="#/status"  class="btn {{option.code}}">EOC Status: {{option.message}}</a> {{option.description}}</p>
+    </li>
+</ul>

@@ -1,40 +1,36 @@
 /**
  * Created by kwhatcher on 4/15/2016.
  */
-(function() {
+app.controller('adminpageCtrl', adminController);
 
-    'use strict';
 
-    angular
-        .module('aresApp')
-        .controller('adminpageCtrl', aresAdmin);
 
-    function aresAdmin() {
-        return {
-            templateUrl: 'files/partials/admin.html',
-            controller: toolbarController,
-            controllerAs: 'toolbar',
-            bindToController: true
+    function adminController(auth, store, $location, $http) {
+
+        var vm = this;
+        vm.auth = auth;
+        
+
+        function getStatusJsonCallBack(data){
+
+            vm.eocstatusoptions = data.data.options;
+            vm.eocstatus = data.data.options[data.data.eocstatus];
+            console.log(vm.eocstatus);
+            console.log(vm.eocstatusoptions);
         }
-    }
+
+        $http.get('files/json/status.json').then(getStatusJsonCallBack);
 
 
-// --- Add for updating ---
-function getSecureApiClient() {
-    var awstoken = store.get('awstoken');
+        function getSecureApiClient() {
+            var awstoken = store.get('awstoken');
 
-    return apigClientFactory.newClient({
-        accessKey: awstoken.AccessKeyId,
-        secretKey: awstoken.SecretAccessKey,
-        sessionToken: awstoken.SessionToken,
-        region: 'us-east-1' // Set to your region
-    });
-}
+            return apigClientFactory.newClient({
+                accessKey: awstoken.AccessKeyId,
+                secretKey: awstoken.SecretAccessKey,
+                sessionToken: awstoken.SessionToken,
+                region: 'us-east-1' // Set to your region
+            });
+        }
 
-
-    app.controller('MainController', function($scope, auth, store) {
-        $scope.eocstatusmsg = "here is a test";
-        $scope.firstName = "John";
-        $scope.lastName = "Smith";
-
-    });
+    };

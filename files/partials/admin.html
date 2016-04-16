@@ -1,1 +1,10 @@
+
 <h1>Admin Area</h1>
+
+
+<ul>
+    <li ng-repeat="option in admin.eocstatusoptions">
+        <a href="#/status"  class="btn {{option.code}}">EOC Status: {{option.message}}</a>
+        <p>{{option.description}}</p>
+    </li>
+</ul>

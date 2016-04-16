@@ -20,7 +20,9 @@ var app = angular.module('aresApp', ['ngRoute', 'auth0', 'angular-storage', 'ang
                 templateUrl: 'files/partials/contact.html'
             })
             .when('/admin', {
-                templateUrl: 'files/partials/admin.html'
+                templateUrl: 'files/partials/admin.html',
+                controller: 'adminpageCtrl',
+                controllerAs: 'admin'
             })
             .when('/profile', {
                 templateUrl: 'files/partials/profile.html',

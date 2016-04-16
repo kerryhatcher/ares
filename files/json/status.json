@@ -1,0 +1,25 @@
+{
+  "eocstatus": "full",
+  "options": {
+      "monitor": {
+        "message": "Monitoring",
+        "code": "btn-success",
+        "description": "No support requests anticipated at this time."
+      } ,
+      "standby": {
+        "message": "Standby",
+        "code": "btn-info",
+        "description": "ARES support anticipated--Be prepared!"
+      },
+      "partial": {
+        "message": "Partial Activation",
+        "code": "btn-warning",
+        "description": "Limited ARES support requested."
+      },
+      "full": {
+        "message": "Full Activation",
+        "code": "btn-danger",
+        "description": "All ARES member support requested."
+      }
+  }
+}

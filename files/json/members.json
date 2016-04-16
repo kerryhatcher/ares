@@ -1,0 +1,27 @@
+{
+  "members": {
+    "kk4gta": {
+      "call": "kk4gta",
+      "licence": "2",
+      "position": "AEC",
+      "team": "1a",
+      "name": {
+        "first": "kerry",
+        "last": "hatcher"
+      },
+      "phonenumbers": {
+        "primary": "cell",
+        "cell": "4789518703"
+      },
+      "emails": {
+        "primary": "personal",
+        "personal": "kwhatcher@gmail.com"
+      }
+    }
+  },
+  "teams": {
+    "1a": {
+      "name": "Information Technology"
+    }
+  }
+}

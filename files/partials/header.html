@@ -28,11 +28,25 @@
                         <li><a href="#/">One more separated link</a></li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li ng-if="!toolbar.auth.isAuthenticated"><a ng-click="toolbar.login()">Login</a></li>
+                        <li ng-if="toolbar.auth.isAuthenticated"><a href="#/profile">Profile</a></li>
+                        <li ng-if="toolbar.auth.isAuthenticated"><a ng-click="toolbar.logout()">Logout</a></li>
+                    </ul>
+                </li>
             </ul>
             <div class="navbar-form navbar-right">
-                <a href="#/status"  class="btn {{eocstatus.code}}">EOC Status: {{eocstatus.message}}</a>
+                    <a href="#/status"  class="btn {{toolbar.eocstatus.code}}">EOC Status: {{toolbar.eocstatus.message}}</a>
             </div>
         </div><!--/.nav-collapse -->
 
     </div>
 </nav>
+
+
+
+
+
+
